@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.python-version
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Test, coverage, and build output
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+target/
+*.egg-info/
+*.log
+
+# Runtime state and generated data
+.uploads/
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+data/*.xlsx
+data/chroma/
+data/chroma-snapshots/
+
+# Local model artifacts (GitHub rejects files larger than 100 MB)
+models/
+*.onnx
+*.safetensors
+
+# Local release archives
+*.zip
+*.tar.gz
