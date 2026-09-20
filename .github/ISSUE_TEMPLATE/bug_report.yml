@@ -1,0 +1,57 @@
+name: Bug report
+description: 报告可重复的 CampusFlow 问题
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你帮助改进 CampusFlow。请勿提交真实学生数据、密码或 API 密钥。
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+      description: 实际发生了什么？期望行为是什么？
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 启动……
+        2. 访问……
+        3. 提交……
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 版本或提交
+      placeholder: v0.2.0 或 commit SHA
+  - type: dropdown
+    id: runtime
+    attributes:
+      label: AI Provider
+      options:
+        - mock
+        - ollama
+        - openai-compatible
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志
+      description: 请先移除凭据、学号、电话、邮箱和其他个人数据。
+      render: shell
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我已搜索现有 Issue。
+          required: true
+        - label: 我已从内容中删除凭据和个人数据。
+          required: true

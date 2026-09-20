@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CampusFlow 学生端</title>
+  <link rel="stylesheet" href="/styles.css?v=student-premium-20260726">
+</head>
+<body class="student-page">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo student-logo">CF</div>
+      <div>
+        <p class="eyebrow">CAMPUS SERVICE ASSISTANT</p>
+        <h1>CampusFlow 一站式学生事务</h1>
+        <p class="topbar-subtitle">政策可查、事务可办、事件可跟进</p>
+      </div>
+    </div>
+    <div class="status-row">
+      <span id="serviceState" class="pill warn">连接中</span>
+      <span id="modelState" class="pill warn">模型读取中</span>
+      <div id="accountBadge" class="account">
+        <strong id="activeAccount">学生</strong>
+        <span>学生端</span>
+      </div>
+      <button id="switchAccount" class="dark-btn" type="button">退出</button>
+    </div>
+  </header>
+
+  <main class="student-layout premium-student-layout">
+    <aside class="student-rail">
+      <section class="companion-card">
+        <div class="companion-visual" role="img" aria-label="阳光下在校园空间中书写的学生"></div>
+        <div class="companion-copy">
+          <span>YOUR CAMPUS SERVICE DESK</span>
+          <h2>校园事务，从这里开始</h2>
+          <p>直接说明要咨询、办理或反馈的事项，系统会帮你找到对应流程。</p>
+        </div>
+      </section>
+
+      <section class="panel checkin-panel">
+        <div class="section-head">
+          <div>
+            <p class="panel-label">QUICK SERVICES</p>
+            <h3>你想办理什么？</h3>
+          </div>
+          <span class="checkin-note">选择一个开始</span>
+        </div>
+        <div class="signal-grid">
+          <button class="signal mood-signal" type="button" data-quick="宿舍空调不制冷，首次报修前我需要准备哪些信息？">
+            <span class="signal-icon">◒</span>
+            <span><strong>宿舍报修</strong><small>空调、水电或设施故障</small></span>
+          </button>
+          <button class="signal mood-signal" type="button" data-quick="奖学金、助学金、困难补助和勤工助学有什么区别？我该怎么选？">
+            <span class="signal-icon">≈</span>
+            <span><strong>奖助学金</strong><small>申请条件、材料和时间</small></span>
+          </button>
+          <button class="signal mood-signal" type="button" data-quick="我的校园卡刚丢，怎么先挂失再补办？如果有异常消费怎么处理？">
+            <span class="signal-icon">—</span>
+            <span><strong>校园卡服务</strong><small>挂失、补卡和账户安全</small></span>
+          </button>
+          <button class="signal mood-signal" type="button" data-quick="宿舍报修提交后一直没处理，我有原工单编号，应该先催办还是直接投诉？">
+            <span class="signal-icon">↗</span>
+            <span><strong>投诉与反馈</strong><small>进度催办、申诉或建议</small></span>
+          </button>
+        </div>
+      </section>
+
+      <section class="support-note">
+        <span class="support-mark">CF</span>
+        <div>
+          <strong>准确、便捷、可追踪</strong>
+          <p>正式申请和材料提交以学校官方系统为准；如遇冒烟、漏电、火灾或人身威胁，请先远离危险并联系值班人员。</p>
+        </div>
+      </section>
+    </aside>
+
+    <section class="chat-panel student-chat">
+      <div class="chat-head student-chat-head">
+        <div class="chat-heading-wrap">
+          <span class="assistant-avatar">CF</span>
+          <div>
+            <p class="panel-label">CAMPUSFLOW SERVICE AGENT</p>
+            <h2 id="studentGreeting">今天需要办理什么校园事务？</h2>
+            <p class="chat-subtitle">我会检索校园制度、整理办理步骤，并在需要时创建服务工单。</p>
+          </div>
+        </div>
+        <div class="session-state">
+          <span class="session-dot"></span>
+          <span id="sessionBadge" class="pill">READY</span>
+        </div>
+      </div>
+      <div class="student-trust-row" aria-label="对话特点">
+        <span><i></i>政策依据</span>
+        <span><i></i>隐私脱敏</span>
+        <span><i></i>紧急事件协同</span>
+      </div>
+      <div id="messages" class="messages">
+        <div class="empty student-welcome">
+          <span class="welcome-kicker">ONE STOP CAMPUS SERVICE</span>
+          <strong>直接说出你要咨询或办理的事项</strong>
+          <p>可以咨询政策、提交报修、办理校园卡、反馈投诉，也可以上报紧急校园事件。</p>
+          <div class="welcome-prompts">
+            <button type="button" data-quick="宿舍空调不制冷，首次报修前我需要准备哪些信息？">宿舍报修</button>
+            <button type="button" data-quick="奖学金、助学金、困难补助和勤工助学有什么区别？我该怎么选？">奖助项目区别</button>
+            <button type="button" data-quick="我的校园卡刚丢，怎么先挂失再补办？如果有异常消费怎么处理？">挂失与补卡</button>
+            <button type="button" data-quick="宿舍报修提交后一直没处理，我有原工单编号，应该先催办还是直接投诉？">催办或投诉</button>
+          </div>
+        </div>
+      </div>
+      <form id="chatForm" class="composer">
+        <div class="composer-shell">
+          <textarea id="messageInput" maxlength="1000" placeholder="请说明事项、地点、时间和当前情况……" rows="3"></textarea>
+          <div class="composer-meta">
+            <span>请勿发送密码、验证码或无关敏感信息</span>
+            <span id="charCount">0 / 1000</span>
+          </div>
+        </div>
+        <div class="composer-actions student-composer-actions">
+          <span class="keyboard-hint">Enter 换行 · 点击按钮发送</span>
+          <div>
+            <button id="newSession" class="ghost" type="button">重新开始</button>
+            <button id="sendButton" class="primary send-button" type="submit">发送消息 <span>↗</span></button>
+          </div>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="/student.js?v=student-premium-20260726b"></script>
+</body>
+</html>

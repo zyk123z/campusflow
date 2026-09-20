@@ -1,0 +1,74 @@
+from enum import Enum
+
+
+class MessageRole(str, Enum):
+    USER = "USER"
+    ASSISTANT = "ASSISTANT"
+    SYSTEM = "SYSTEM"
+
+
+class IntentType(str, Enum):
+    CHAT = "CHAT"
+    POLICY_QUERY = "POLICY_QUERY"
+    SERVICE_REQUEST = "SERVICE_REQUEST"
+    COMPLAINT = "COMPLAINT"
+    EMERGENCY = "EMERGENCY"
+
+
+class RiskLevel(str, Enum):
+    LOW = "LOW"
+    MEDIUM = "MEDIUM"
+    HIGH = "HIGH"
+
+
+class CampusEventCategory(str, Enum):
+    GENERAL = "GENERAL"
+    ACADEMIC_AFFAIRS = "ACADEMIC_AFFAIRS"
+    STUDENT_AFFAIRS = "STUDENT_AFFAIRS"
+    DORMITORY = "DORMITORY"
+    CAMPUS_CARD = "CAMPUS_CARD"
+    FINANCIAL_AID = "FINANCIAL_AID"
+    FACILITY_HAZARD = "FACILITY_HAZARD"
+    CAMPUS_SECURITY = "CAMPUS_SECURITY"
+    COMPLAINT = "COMPLAINT"
+
+
+class CampusDepartment(str, Enum):
+    SERVICE_CENTER = "SERVICE_CENTER"
+    ACADEMIC_AFFAIRS = "ACADEMIC_AFFAIRS"
+    STUDENT_AFFAIRS = "STUDENT_AFFAIRS"
+    LOGISTICS = "LOGISTICS"
+    SECURITY = "SECURITY"
+    FINANCE = "FINANCE"
+    IT_CENTER = "IT_CENTER"
+
+
+class UrgencyLevel(str, Enum):
+    ROUTINE = "ROUTINE"
+    PRIORITY = "PRIORITY"
+    URGENT = "URGENT"
+
+
+class ToolStatus(str, Enum):
+    SUCCESS = "SUCCESS"
+    FAILED = "FAILED"
+
+
+class ToolJobKind(str, Enum):
+    LEDGER_WRITE = "LEDGER_WRITE"
+    TICKET_CREATE = "TICKET_CREATE"
+    EMERGENCY_ALERT = "EMERGENCY_ALERT"
+
+
+class ToolJobStatus(str, Enum):
+    PENDING = "PENDING"
+    RUNNING = "RUNNING"
+    SUCCESS = "SUCCESS"
+    DEAD = "DEAD"
+
+
+class TicketStatus(str, Enum):
+    OPEN = "OPEN"
+    ALERT_SENT = "ALERT_SENT"
+    ACKNOWLEDGED = "ACKNOWLEDGED"
+    RESOLVED = "RESOLVED"
